@@ -18,3 +18,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Local instructions for CLI/AI agents
+docs/architecture-decision-record-cli.md
