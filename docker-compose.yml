@@ -1,19 +1,19 @@
-name: evento
+name: ${COMPOSE_PROJECT_NAME:-evento}
 
 services:
-
   wordpress:
     image: wordpress:php8.3-apache
     restart: unless-stopped
+    init: true
 
     ports:
-      - "127.0.0.1:9050:80"
+      - "127.0.0.1:${WORDPRESS_PORT:-9050}:80"
 
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
-      WORDPRESS_DB_USER: ${MYSQL_USER}
-      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:-evento}
+      WORDPRESS_DB_USER: ${MYSQL_USER:-evento}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:-evento_password}
 
     volumes:
       - wordpress_data:/var/www/html
@@ -23,37 +23,65 @@ services:
       db:
         condition: service_healthy
 
+    networks:
+      - evento
+
+  cli:
+    image: wordpress:cli-php8.3
+    init: true
+    profiles:
+      - tools
+    working_dir: /var/www/html
+
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:-evento}
+      WORDPRESS_DB_USER: ${MYSQL_USER:-evento}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:-evento_password}
+
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./theme:/var/www/html/wp-content/themes/evento
+
+    depends_on:
+      wordpress:
+        condition: service_started
+      db:
+        condition: service_healthy
+
+    networks:
+      - evento
+
   db:
     image: mariadb:11
     restart: unless-stopped
+    init: true
 
     environment:
-      MARIADB_DATABASE: ${MYSQL_DATABASE}
-      MARIADB_USER: ${MYSQL_USER}
-      MARIADB_PASSWORD: ${MYSQL_PASSWORD}
-      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MYSQL_DATABASE:-evento}
+      MARIADB_USER: ${MYSQL_USER:-evento}
+      MARIADB_PASSWORD: ${MYSQL_PASSWORD:-evento_password}
+      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-evento_root_password}
 
     volumes:
       - db_data:/var/lib/mysql
 
     healthcheck:
-      test:
-        [
-          "CMD",
-          "healthcheck.sh",
-          "--connect",
-          "--innodb_initialized"
-        ]
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 5s
       timeout: 5s
       retries: 10
 
+    networks:
+      - evento
+
   phpmyadmin:
-    image: phpmyadmin:latest
+    image: phpmyadmin:5-apache
     restart: unless-stopped
+    init: true
 
     ports:
-      - "127.0.0.1:9051:80"
+      - "127.0.0.1:${PHPMYADMIN_PORT:-9051}:80"
 
     environment:
       PMA_HOST: db
@@ -63,6 +91,13 @@ services:
       db:
         condition: service_healthy
 
+    networks:
+      - evento
+
 volumes:
   wordpress_data:
   db_data:
+
+networks:
+  evento:
+    driver: bridge

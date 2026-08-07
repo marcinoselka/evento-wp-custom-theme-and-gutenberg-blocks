@@ -22,7 +22,8 @@ Projekt jest rozwijany w środowisku:
 * Docker Compose,
 * MariaDB,
 * WordPress,
-* phpMyAdmin.
+* phpMyAdmin,
+* WP-CLI.
 
 ## Aktualna struktura projektu
 
@@ -45,6 +46,12 @@ evento/
 WordPress działa w kontenerze Docker na oficjalnym obrazie WordPress.
 
 WordPress Core nie znajduje się w repozytorium.
+
+Instalacja WordPressa jest przechowywana w Docker Volume:
+
+```text
+wordpress_data
+```
 
 Katalog `theme/` jest montowany do:
 
@@ -98,9 +105,25 @@ Motyw nie został jeszcze zaimplementowany.
 
 ## WP-CLI
 
-WP-CLI jest zaakceptowanym elementem docelowej architektury, ale nie został jeszcze dodany do aktualnej konfiguracji Docker Compose.
+WP-CLI działa jako osobny serwis Docker Compose na oficjalnym obrazie:
 
-Jego implementacja znajduje się w roadmapie.
+```text
+wordpress:cli-php8.3
+```
+
+Serwis `cli` współdzieli z serwisem `wordpress` ten sam wolumen:
+
+```text
+wordpress_data:/var/www/html
+```
+
+Dzięki temu WP-CLI widzi tę samą instalację WordPressa, co kontener aplikacji.
+
+WP-CLI jest uruchamiany jako narzędzie developerskie, na przykład przez:
+
+```bash
+make wp ARGS="--info"
+```
 
 ## Automatyczna instalacja
 
@@ -141,9 +164,13 @@ Docelowo będzie generowała dane demonstracyjne i importowała obrazy do WordPr
 
 ## Media
 
-Obecnie projekt nie posiada mechanizmu automatycznego odtwarzania WordPress Media Library.
+Pliki WordPressa, w tym `wp-content/uploads/`, są przechowywane w wolumenie:
 
-Mechanizm importowania i odtwarzania mediów nie został jeszcze zaimplementowany.
+```text
+wordpress_data
+```
+
+Mechanizm automatycznego importowania i odtwarzania mediów nie został jeszcze zaimplementowany.
 
 ## Aktualizacja dokumentu
 

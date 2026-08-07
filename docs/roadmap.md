@@ -12,8 +12,8 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Przygotowanie `.env.example`
 * [x] Konfiguracja `.gitignore`
 * [x] Przygotowanie podstawowej konfiguracji Docker Compose
-* [ ] Finalizacja Docker Compose
-* [ ] Dodanie WP-CLI
+* [x] Finalizacja Docker Compose
+* [x] Dodanie WP-CLI
 * [ ] Finalizacja Makefile
 * [ ] Implementacja `make install`
 * [ ] Weryfikacja instalacji od zera
