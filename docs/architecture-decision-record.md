@@ -44,12 +44,6 @@ Podstawowe środowisko developerskie:
 * Docker,
 * Docker Compose.
 
-Lokalna ścieżka projektu:
-
-```text
-~/projects_osi/evento
-```
-
 Projekt powinien działać również na innych środowiskach obsługujących Docker Compose.
 
 ## 4. Docker
