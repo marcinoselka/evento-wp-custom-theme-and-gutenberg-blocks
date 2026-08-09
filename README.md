@@ -29,6 +29,7 @@ EVENTO is a modern WordPress Events Portal built from scratch as a portfolio pro
 ```bash
 cp .env.example .env
 make up
+make install
 ```
 
 Application:

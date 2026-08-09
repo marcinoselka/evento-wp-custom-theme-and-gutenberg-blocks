@@ -15,8 +15,8 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Finalizacja Docker Compose
 * [x] Dodanie WP-CLI
 * [x] Finalizacja Makefile
-* [ ] Implementacja `make install`
-* [ ] Weryfikacja instalacji od zera
+* [x] Implementacja `make install`
+* [x] Weryfikacja instalacji od zera
 
 ## Etap 2 - podstawy motywu
 

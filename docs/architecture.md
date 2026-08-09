@@ -125,6 +125,14 @@ WP-CLI jest uruchamiany jako narzędzie developerskie, na przykład przez:
 make wp ARGS="--info"
 ```
 
+Serwis `cli` działa z uprawnieniami zgodnymi z plikami WordPressa w wolumenie `wordpress_data`, dzięki czemu WP-CLI może modyfikować pliki WordPressa, w tym `wp-content/uploads`.
+
+Cache WP-CLI jest kierowany do:
+
+```text
+/tmp/.wp-cli/cache
+```
+
 ## Automatyczna instalacja
 
 Komenda:
@@ -133,9 +141,21 @@ Komenda:
 make install
 ```
 
-nie została jeszcze zaimplementowana.
+instaluje WordPressa za pomocą WP-CLI.
 
-Docelowo będzie instalowała i konfigurowała WordPress za pomocą WP-CLI.
+Instalacja korzysta ze zmiennych środowiskowych:
+
+```text
+WP_URL
+WP_TITLE
+WP_ADMIN_USER
+WP_ADMIN_PASSWORD
+WP_ADMIN_EMAIL
+```
+
+Komenda jest idempotentna. Jeżeli WordPress jest już zainstalowany, ponowne uruchomienie `make install` nie wykonuje instalacji ponownie.
+
+Na tym etapie `make install` nie aktywuje jeszcze motywu, ponieważ motyw nie został jeszcze zaimplementowany.
 
 ## Dane demonstracyjne
 
