@@ -106,7 +106,7 @@ Preferujemy oficjalne API WordPressa zamiast bezpośrednich operacji na bazie da
 
 ## 7. Gutenberg i dane
 
-Interfejs opiera się na natywnym Gutenbergie.
+Interfejs opiera się na natywnym Gutenbergu.
 
 Customowe bloki są tworzone przy użyciu oficjalnego WordPress Block API.
 
