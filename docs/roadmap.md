@@ -18,14 +18,19 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Implementacja `make install`
 * [x] Weryfikacja instalacji od zera
 
-## Etap 2 - podstawy motywu
+## Etap 2 - podstawy customowego Block Theme
 
-* [ ] Utworzenie motywu EVENTO
+* [ ] Utworzenie minimalnego motywu EVENTO
 * [ ] Dodanie `style.css`
 * [ ] Dodanie `functions.php`
 * [ ] Dodanie `theme.json`
-* [ ] Konfiguracja struktury motywu
+* [ ] Dodanie `templates/index.html`
+* [ ] Dodanie `parts/header.html`
+* [ ] Dodanie `parts/footer.html`
+* [ ] Konfiguracja podstawowego layoutu Block Theme
 * [ ] Aktywacja motywu przez WP-CLI
+* [ ] Weryfikacja motywu na froncie
+* [ ] Weryfikacja motywu w Site Editorze
 * [ ] Konfiguracja procesu budowania assetów
 
 ## Etap 3 - model danych

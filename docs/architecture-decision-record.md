@@ -104,7 +104,39 @@ Nie korzystamy z gotowego motywu ani starter theme jako podstawy projektu.
 
 Preferujemy oficjalne API WordPressa zamiast bezpośrednich operacji na bazie danych.
 
-## 7. Gutenberg i dane
+## 7. Customowy Block Theme
+
+EVENTO będzie wykorzystywać własny WordPress Block Theme tworzony od zera.
+
+Nie korzystamy z:
+
+* starter theme,
+* parent theme,
+* klasycznych template'ów PHP jako podstawy motywu.
+
+Struktura motywu będzie oparta na natywnych mechanizmach Block Theme, w szczególności:
+
+* `theme.json`,
+* `templates/*.html`,
+* `parts/*.html`,
+* natywnych blokach WordPress,
+* własnych customowych blokach Gutenberg.
+
+Nie tworzymy klasycznych plików takich jak:
+
+```text
+header.php
+footer.php
+index.php
+```
+
+jeżeli nie pojawi się konkretna potrzeba techniczna.
+
+`functions.php` pozostaje częścią motywu i będzie wykorzystywany tylko do funkcjonalności wymagających PHP, takich jak późniejsza rejestracja bloków, assetów lub innych elementów motywu.
+
+Nie tworzymy katalogów ani mechanizmów wyłącznie na przyszłość. Elementy takie jak `patterns/` powstaną dopiero wtedy, gdy projekt zacznie faktycznie korzystać z Block Patterns.
+
+## 8. Gutenberg i dane
 
 Interfejs opiera się na natywnym Gutenbergu.
 
@@ -120,7 +152,7 @@ Dane domenowe wykorzystują natywne mechanizmy WordPressa, między innymi:
 * REST API,
 * block attributes.
 
-## 8. WP-CLI i automatyzacja
+## 9. WP-CLI i automatyzacja
 
 WP-CLI będzie standardowym elementem środowiska Docker Compose i służy do automatyzacji między innymi:
 
@@ -133,7 +165,7 @@ WP-CLI będzie standardowym elementem środowiska Docker Compose i służy do au
 
 Docelowa instalacja powinna działać bez ręcznego kreatora WordPressa.
 
-## 9. `make install`
+## 10. `make install`
 
 Komenda:
 
@@ -148,7 +180,7 @@ powinna automatycznie:
 * utworzyć administratora,
 * aktywować wymagane elementy projektu.
 
-## 10. Dane demonstracyjne i `make seed`
+## 11. Dane demonstracyjne i `make seed`
 
 Nie wersjonujemy:
 
@@ -182,7 +214,7 @@ powinna programowo utworzyć komplet danych demonstracyjnych, między innymi:
 
 Dane tworzymy przez WordPress API i/lub WP-CLI, bez bezpośredniego importu SQL.
 
-## 11. Media Library
+## 12. Media Library
 
 Obrazy z `demo/images/` są materiałami źródłowymi.
 
@@ -196,7 +228,7 @@ Obrazy z `demo/images/` są materiałami źródłowymi.
 
 Nie kopiujemy ręcznie danych demonstracyjnych do `uploads`.
 
-## 12. Baza danych i odtwarzalność
+## 13. Baza danych i odtwarzalność
 
 MariaDB przechowuje lokalny stan WordPressa, ale baza nie jest częścią repozytorium.
 
@@ -211,7 +243,7 @@ make install
 make seed
 ```
 
-## 13. Makefile
+## 14. Makefile
 
 `Makefile` jest prostym interfejsem do operacji developerskich.
 
@@ -232,7 +264,7 @@ make destroy
 
 Komenda nie powinna być przedstawiana w dokumentacji jako dostępna, dopóki nie została zaimplementowana.
 
-## 14. Git
+## 15. Git
 
 Główna gałąź:
 
@@ -253,7 +285,7 @@ chore:
 
 Nie commitujemy sekretów, lokalnego `.env`, wygenerowanych uploadów ani lokalnej bazy danych.
 
-## 15. Dokumentacja i prostota
+## 16. Dokumentacja i prostota
 
 Dokumentacja jest częścią projektu i znajduje się w:
 
