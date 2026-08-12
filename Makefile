@@ -1,4 +1,4 @@
-.PHONY: up down stop restart logs ps shell db wp install destroy
+.PHONY: up down stop restart logs ps shell db wp install destroy wpcli
 
 up:
 	docker compose up -d
@@ -38,3 +38,6 @@ install:
 		--admin_password="$${WP_ADMIN_PASSWORD}" \
 		--admin_email="$${WP_ADMIN_EMAIL}" \
 		--skip-email'
+
+wpcli:
+	docker compose run --rm cli sh

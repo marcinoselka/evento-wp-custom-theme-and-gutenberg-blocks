@@ -56,8 +56,10 @@ wordpress_data
 Katalog `theme/` jest montowany do:
 
 ```text
-/var/www/html/wp-content/themes/evento
+/var/www/html/wp-content/themes/evento-cbt
 ```
+
+Katalog motywu używa sluga `evento-cbt`, aby uniknąć kolizji z istniejącym motywem `evento` w repozytorium WordPress.org.
 
 ## MariaDB
 
@@ -101,7 +103,26 @@ Kod własnego motywu będzie rozwijany w:
 theme/
 ```
 
-Motyw nie został jeszcze zaimplementowany.
+Motyw jest własnym Block Theme tworzonym od zera.
+
+Aktualnie zawiera minimalną strukturę:
+
+```text
+theme/
+├── style.css
+├── functions.php
+├── theme.json
+└── templates/
+    └── index.html
+```
+
+Nazwa motywu widoczna w WordPressie to `EVENTO`.
+
+Slug katalogu motywu to:
+
+```text
+evento-cbt
+```
 
 ## WP-CLI
 
@@ -123,6 +144,12 @@ WP-CLI jest uruchamiany jako narzędzie developerskie, na przykład przez:
 
 ```bash
 make wp ARGS="--info"
+```
+
+Interaktywny shell w kontenerze WP-CLI jest dostępny przez:
+
+```bash
+make wpcli
 ```
 
 Serwis `cli` działa z uprawnieniami zgodnymi z plikami WordPressa w wolumenie `wordpress_data`, dzięki czemu WP-CLI może modyfikować pliki WordPressa, w tym `wp-content/uploads`.
@@ -155,7 +182,7 @@ WP_ADMIN_EMAIL
 
 Komenda jest idempotentna. Jeżeli WordPress jest już zainstalowany, ponowne uruchomienie `make install` nie wykonuje instalacji ponownie.
 
-Na tym etapie `make install` nie aktywuje jeszcze motywu, ponieważ motyw nie został jeszcze zaimplementowany.
+Na tym etapie `make install` nie aktywuje jeszcze motywu.
 
 ## Dane demonstracyjne
 

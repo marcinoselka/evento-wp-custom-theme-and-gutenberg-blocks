@@ -20,16 +20,16 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 
 ## Etap 2 - podstawy customowego Block Theme
 
-* [ ] Utworzenie minimalnego motywu EVENTO
-* [ ] Dodanie `style.css`
-* [ ] Dodanie `functions.php`
-* [ ] Dodanie `theme.json`
-* [ ] Dodanie `templates/index.html`
+* [x] Utworzenie minimalnego motywu EVENTO
+* [x] Dodanie `style.css`
+* [x] Dodanie `functions.php`
+* [x] Dodanie `theme.json`
+* [x] Dodanie `templates/index.html`
 * [ ] Dodanie `parts/header.html`
 * [ ] Dodanie `parts/footer.html`
-* [ ] Konfiguracja podstawowego layoutu Block Theme
-* [ ] Aktywacja motywu przez WP-CLI
-* [ ] Weryfikacja motywu na froncie
+* [x] Konfiguracja podstawowego layoutu Block Theme
+* [x] Aktywacja motywu przez WP-CLI
+* [x] Weryfikacja motywu na froncie
 * [ ] Weryfikacja motywu w Site Editorze
 * [ ] Konfiguracja procesu budowania assetów
 

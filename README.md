@@ -68,6 +68,12 @@ Run WP-CLI
 make wp ARGS="--info"
 ```
 
+Open WP-CLI shell
+
+```bash
+make wpcli
+```
+
 Stop containers
 
 ```bash

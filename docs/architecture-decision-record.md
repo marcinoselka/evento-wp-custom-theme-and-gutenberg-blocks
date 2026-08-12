@@ -100,6 +100,14 @@ Własny motyw jest tworzony od podstaw i znajduje się w:
 theme/
 ```
 
+Nazwa motywu widoczna w WordPressie to `EVENTO`, natomiast slug katalogu motywu to:
+
+```text
+evento-cbt
+```
+
+Slug `evento-cbt` jest celowy, ponieważ w repozytorium WordPress.org istnieje już motyw o slug `evento`, co mogłoby powodować kolizje związane z aktualizacjami.
+
 Nie korzystamy z gotowego motywu ani starter theme jako podstawy projektu.
 
 Preferujemy oficjalne API WordPressa zamiast bezpośrednich operacji na bazie danych.
@@ -257,6 +265,7 @@ make logs
 make ps
 make shell
 make wp
+make wpcli
 make install
 make seed
 make destroy

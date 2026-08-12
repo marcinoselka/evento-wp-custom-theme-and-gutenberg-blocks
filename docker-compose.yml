@@ -17,7 +17,7 @@ services:
 
     volumes:
       - wordpress_data:/var/www/html
-      - ./theme:/var/www/html/wp-content/themes/evento
+      - ./theme:/var/www/html/wp-content/themes/evento-cbt
 
     depends_on:
       db:
@@ -49,7 +49,7 @@ services:
 
     volumes:
       - wordpress_data:/var/www/html
-      - ./theme:/var/www/html/wp-content/themes/evento
+      - ./theme:/var/www/html/wp-content/themes/evento-cbt
 
     depends_on:
       wordpress:
