@@ -1,6 +1,6 @@
 # EVENTO
 
-EVENTO is a modern WordPress Events Portal built from scratch as a portfolio project.
+EVENTO is a modern WordPress events portal built from scratch with a **custom Block Theme** and **custom Gutenberg blocks**.
 
 ## Tech Stack
 
@@ -72,6 +72,18 @@ Open WP-CLI shell
 
 ```bash
 make wpcli
+```
+
+Install theme dependencies
+
+```bash
+npm --prefix theme install
+```
+
+Build theme assets
+
+```bash
+npm --prefix theme run build
 ```
 
 Stop containers

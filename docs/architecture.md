@@ -134,6 +134,24 @@ Plik `theme.json` definiuje aktualnie:
 * ustawienia spacingu dla paddingu, marginesów i `blockGap`,
 * template parts `header` i `footer` widoczne w Site Editorze jako `EVENTO Header` i `EVENTO Footer`.
 
+Proces budowania assetów motywu jest skonfigurowany w:
+
+```text
+theme/package.json
+theme/package-lock.json
+```
+
+Motyw korzysta z pakietu `@wordpress/scripts` oraz skryptów:
+
+```bash
+npm run build
+npm run start
+```
+
+Katalog `theme/src/` nie istnieje jeszcze, ponieważ projekt nie zawiera jeszcze realnego kodu JavaScript/CSS wymagającego zbudowania.
+
+Pierwsza pełna weryfikacja builda z rzeczywistym wejściem zostanie wykonana przy implementacji pierwszego customowego bloku Gutenberg.
+
 ## WP-CLI
 
 WP-CLI działa jako osobny serwis Docker Compose na oficjalnym obrazie:

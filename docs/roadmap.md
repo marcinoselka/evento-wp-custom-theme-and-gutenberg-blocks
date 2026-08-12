@@ -31,7 +31,7 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Aktywacja motywu przez WP-CLI
 * [x] Weryfikacja motywu na froncie
 * [x] Weryfikacja motywu w Site Editorze
-* [ ] Konfiguracja procesu budowania assetów
+* [x] Konfiguracja procesu budowania assetów
 
 ## Etap 3 - model danych
 
