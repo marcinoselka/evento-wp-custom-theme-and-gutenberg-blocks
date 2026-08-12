@@ -25,8 +25,8 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Dodanie `functions.php`
 * [x] Dodanie `theme.json`
 * [x] Dodanie `templates/index.html`
-* [ ] Dodanie `parts/header.html`
-* [ ] Dodanie `parts/footer.html`
+* [x] Dodanie `parts/header.html`
+* [x] Dodanie `parts/footer.html`
 * [x] Konfiguracja podstawowego layoutu Block Theme
 * [x] Aktywacja motywu przez WP-CLI
 * [x] Weryfikacja motywu na froncie

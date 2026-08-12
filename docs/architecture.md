@@ -112,8 +112,11 @@ theme/
 ├── style.css
 ├── functions.php
 ├── theme.json
-└── templates/
-    └── index.html
+├── templates/
+│   └── index.html
+└── parts/
+    ├── header.html
+    └── footer.html
 ```
 
 Nazwa motywu widoczna w WordPressie to `EVENTO`.
