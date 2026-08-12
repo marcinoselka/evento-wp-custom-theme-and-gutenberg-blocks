@@ -5,6 +5,26 @@
     "layout": {
       "contentSize": "760px",
       "wideSize": "1200px"
+    },
+    "typography": {
+      "fluid": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true,
+      "blockGap": true
     }
-  }
+  },
+  "templateParts": [
+    {
+      "area": "header",
+      "name": "header",
+      "title": "EVENTO Header"
+    },
+    {
+      "area": "footer",
+      "name": "footer",
+      "title": "EVENTO Footer"
+    }
+  ]
 }

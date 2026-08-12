@@ -30,7 +30,7 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Konfiguracja podstawowego layoutu Block Theme
 * [x] Aktywacja motywu przez WP-CLI
 * [x] Weryfikacja motywu na froncie
-* [ ] Weryfikacja motywu w Site Editorze
+* [x] Weryfikacja motywu w Site Editorze
 * [ ] Konfiguracja procesu budowania assetów
 
 ## Etap 3 - model danych

@@ -127,6 +127,13 @@ Slug katalogu motywu to:
 evento-cbt
 ```
 
+Plik `theme.json` definiuje aktualnie:
+
+* szerokości layoutu `contentSize` i `wideSize`,
+* obsługę fluid typography,
+* ustawienia spacingu dla paddingu, marginesów i `blockGap`,
+* template parts `header` i `footer` widoczne w Site Editorze jako `EVENTO Header` i `EVENTO Footer`.
+
 ## WP-CLI
 
 WP-CLI działa jako osobny serwis Docker Compose na oficjalnym obrazie:
