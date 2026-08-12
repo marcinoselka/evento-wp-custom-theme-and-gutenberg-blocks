@@ -112,6 +112,8 @@ theme/
 ├── style.css
 ├── functions.php
 ├── theme.json
+├── package.json
+├── package-lock.json
 ├── templates/
 │   └── index.html
 └── parts/
