@@ -103,6 +103,7 @@ function evento_cbt_register_venue_post_type(): void {
 			'title',
 			'editor',
 			'thumbnail',
+			'custom-fields',
 		),
 	);
 

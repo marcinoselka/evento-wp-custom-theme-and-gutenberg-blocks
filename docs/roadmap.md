@@ -45,7 +45,7 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Implementacja taksonomii `event_category`
 * [x] Implementacja taksonomii `district`
 * [x] Rejestracja meta fields dla `event`
-* [ ] Rejestracja meta fields dla `venue`
+* [x] Rejestracja meta fields dla `venue`
 * [ ] Implementacja relacji `event -> venue`
 * [ ] Walidacja i sanityzacja danych modelu
 * [ ] Weryfikacja modelu danych przez WP-CLI i REST API

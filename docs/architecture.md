@@ -167,7 +167,7 @@ venue
 
 Typ `event` jest publiczny, widoczny w REST API z bazą `events`, posiada archiwum pod adresem `events` i obsługuje tytuł, edytor, Featured Image oraz custom fields.
 
-Typ `venue` jest publiczny, widoczny w REST API z bazą `venues`, posiada archiwum pod adresem `venues` i obsługuje tytuł, edytor oraz Featured Image.
+Typ `venue` jest publiczny, widoczny w REST API z bazą `venues`, posiada archiwum pod adresem `venues` i obsługuje tytuł, edytor, Featured Image oraz custom fields.
 
 Motyw rejestruje aktualnie taksonomię:
 
@@ -203,6 +203,19 @@ YYYY-MM-DD HH:MM:SS
 Pole `_event_price_from` jest przechowywane jako decimal string z dwoma miejscami po przecinku.
 
 Pole `_event_is_free` jest przechowywane jako `0` albo `1`.
+
+Motyw rejestruje aktualnie meta fields dla typu `venue`:
+
+```text
+_venue_address
+_venue_latitude
+_venue_longitude
+_venue_website
+```
+
+Pola meta typu `venue` są rejestrowane przez `register_post_meta()`, posiadają jawne typy, są pojedynczymi wartościami i są widoczne w REST API.
+
+Pola `_venue_latitude` i `_venue_longitude` są przechowywane jako wartości liczbowe.
 
 ## WP-CLI
 

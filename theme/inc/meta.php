@@ -17,6 +17,7 @@ add_action( 'init', 'evento_cbt_register_meta_fields' );
  */
 function evento_cbt_register_meta_fields(): void {
 	evento_cbt_register_event_meta_fields();
+	evento_cbt_register_venue_meta_fields();
 }
 
 /**
@@ -79,7 +80,58 @@ function evento_cbt_register_event_meta_fields(): void {
 		),
 	);
 
-	foreach ( $event_meta_fields as $meta_key => $args ) {
+	evento_cbt_register_post_meta_fields( 'event', $event_meta_fields );
+}
+
+/**
+ * Registers venue meta fields.
+ */
+function evento_cbt_register_venue_meta_fields(): void {
+	$venue_meta_fields = array(
+		'_venue_address'   => array(
+			'type'              => 'string',
+			'description'       => __( 'Venue address.', 'evento-cbt' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		),
+		'_venue_latitude'  => array(
+			'type'              => 'number',
+			'description'       => __( 'Venue latitude.', 'evento-cbt' ),
+			'sanitize_callback' => 'evento_cbt_sanitize_float',
+			'schema'            => array(
+				'minimum' => -90,
+				'maximum' => 90,
+			),
+		),
+		'_venue_longitude' => array(
+			'type'              => 'number',
+			'description'       => __( 'Venue longitude.', 'evento-cbt' ),
+			'sanitize_callback' => 'evento_cbt_sanitize_float',
+			'schema'            => array(
+				'minimum' => -180,
+				'maximum' => 180,
+			),
+		),
+		'_venue_website'   => array(
+			'type'              => 'string',
+			'description'       => __( 'Venue website URL.', 'evento-cbt' ),
+			'sanitize_callback' => 'esc_url_raw',
+			'schema'            => array(
+				'format' => 'uri',
+			),
+		),
+	);
+
+	evento_cbt_register_post_meta_fields( 'venue', $venue_meta_fields );
+}
+
+/**
+ * Registers a set of post meta fields for one post type.
+ *
+ * @param string $post_type Post type name.
+ * @param array  $meta_fields Meta field definitions.
+ */
+function evento_cbt_register_post_meta_fields( string $post_type, array $meta_fields ): void {
+	foreach ( $meta_fields as $meta_key => $args ) {
 		$schema = array_merge(
 			array(
 				'type' => $args['type'],
@@ -88,7 +140,7 @@ function evento_cbt_register_event_meta_fields(): void {
 		);
 
 		register_post_meta(
-			'event',
+			$post_type,
 			$meta_key,
 			array(
 				'type'              => $args['type'],
@@ -163,4 +215,14 @@ function evento_cbt_sanitize_decimal_string( mixed $value ): string {
  */
 function evento_cbt_sanitize_boolean_integer( mixed $value ): int {
 	return in_array( $value, array( 1, '1', true, 'true' ), true ) ? 1 : 0;
+}
+
+/**
+ * Sanitizes a numeric value to float.
+ *
+ * @param mixed $value Raw meta value.
+ * @return float
+ */
+function evento_cbt_sanitize_float( mixed $value ): float {
+	return (float) $value;
 }
