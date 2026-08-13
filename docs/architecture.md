@@ -116,7 +116,8 @@ theme/
 ├── package-lock.json
 ├── inc/
 │   ├── post-types.php
-│   └── taxonomies.php
+│   ├── taxonomies.php
+│   └── meta.php
 ├── templates/
 │   └── index.html
 └── parts/
@@ -164,7 +165,7 @@ event
 venue
 ```
 
-Typ `event` jest publiczny, widoczny w REST API z bazą `events`, posiada archiwum pod adresem `events` i obsługuje tytuł, edytor oraz Featured Image.
+Typ `event` jest publiczny, widoczny w REST API z bazą `events`, posiada archiwum pod adresem `events` i obsługuje tytuł, edytor, Featured Image oraz custom fields.
 
 Typ `venue` jest publiczny, widoczny w REST API z bazą `venues`, posiada archiwum pod adresem `venues` i obsługuje tytuł, edytor oraz Featured Image.
 
@@ -178,6 +179,30 @@ district
 Taksonomia `event_category` jest przypisana do typu `event`, jest hierarchiczna, publiczna i widoczna w REST API z bazą `event-categories`.
 
 Taksonomia `district` jest przypisana do typu `venue`, jest hierarchiczna, publiczna i widoczna w REST API z bazą `districts`.
+
+Motyw rejestruje aktualnie meta fields dla typu `event`:
+
+```text
+_event_start_datetime
+_event_end_datetime
+_event_venue_id
+_event_organizer
+_event_price_from
+_event_is_free
+_event_ticket_url
+```
+
+Pola meta typu `event` są rejestrowane przez `register_post_meta()`, posiadają jawne typy, są pojedynczymi wartościami i są widoczne w REST API.
+
+Daty wydarzeń są przechowywane jako string w formacie:
+
+```text
+YYYY-MM-DD HH:MM:SS
+```
+
+Pole `_event_price_from` jest przechowywane jako decimal string z dwoma miejscami po przecinku.
+
+Pole `_event_is_free` jest przechowywane jako `0` albo `1`.
 
 ## WP-CLI
 

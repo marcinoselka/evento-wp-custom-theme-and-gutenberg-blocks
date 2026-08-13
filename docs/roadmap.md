@@ -44,7 +44,7 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Implementacja Custom Post Type `venue`
 * [x] Implementacja taksonomii `event_category`
 * [x] Implementacja taksonomii `district`
-* [ ] Rejestracja meta fields dla `event`
+* [x] Rejestracja meta fields dla `event`
 * [ ] Rejestracja meta fields dla `venue`
 * [ ] Implementacja relacji `event -> venue`
 * [ ] Walidacja i sanityzacja danych modelu

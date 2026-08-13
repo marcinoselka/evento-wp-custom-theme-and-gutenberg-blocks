@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once get_template_directory() . '/inc/post-types.php';
 require_once get_template_directory() . '/inc/taxonomies.php';
+require_once get_template_directory() . '/inc/meta.php';
 
 add_action( 'after_setup_theme', 'evento_cbt_setup' );
 

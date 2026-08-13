@@ -58,6 +58,7 @@ function evento_cbt_register_event_post_type(): void {
 			'title',
 			'editor',
 			'thumbnail',
+			'custom-fields',
 		),
 	);
 
