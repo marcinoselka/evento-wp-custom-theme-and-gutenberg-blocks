@@ -44,7 +44,7 @@ function evento_cbt_register_event_meta_fields(): void {
 		'_event_venue_id'       => array(
 			'type'              => 'integer',
 			'description'       => __( 'Venue post ID assigned to the event.', 'evento-cbt' ),
-			'sanitize_callback' => 'absint',
+			'sanitize_callback' => 'evento_cbt_sanitize_event_venue_id',
 			'schema'            => array(
 				'minimum' => 0,
 			),
@@ -185,6 +185,22 @@ function evento_cbt_sanitize_datetime( mixed $value ): string {
 	}
 
 	return $value;
+}
+
+/**
+ * Sanitizes an event venue relation.
+ *
+ * @param mixed $value Raw meta value.
+ * @return int
+ */
+function evento_cbt_sanitize_event_venue_id( mixed $value ): int {
+	$venue_id = absint( $value );
+
+	if ( 0 === $venue_id ) {
+		return 0;
+	}
+
+	return 'venue' === get_post_type( $venue_id ) ? $venue_id : 0;
 }
 
 /**

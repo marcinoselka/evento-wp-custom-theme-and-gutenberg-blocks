@@ -204,6 +204,10 @@ Pole `_event_price_from` jest przechowywane jako decimal string z dwoma miejscam
 
 Pole `_event_is_free` jest przechowywane jako `0` albo `1`.
 
+Pole `_event_venue_id` reprezentuje relację `event -> venue`.
+
+Wartość `0` oznacza brak przypisanego miejsca. Wartość dodatnia jest zachowywana tylko wtedy, gdy wskazuje na istniejący post typu `venue`.
+
 Motyw rejestruje aktualnie meta fields dla typu `venue`:
 
 ```text
