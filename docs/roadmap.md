@@ -38,7 +38,7 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Zaprojektowanie modelu danych EVENTO
 * [x] Przygotowanie minimalnej struktury PHP dla modelu danych
 * [x] Implementacja Custom Post Type `event`
-* [ ] Weryfikacja `event` w WordPress Admin
+* [x] Weryfikacja `event` w WordPress Admin
 * [x] Weryfikacja `event` przez WP-CLI
 * [x] Weryfikacja `event` w REST API
 * [ ] Implementacja Custom Post Type `venue`
