@@ -47,7 +47,7 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Rejestracja meta fields dla `event`
 * [x] Rejestracja meta fields dla `venue`
 * [x] Implementacja relacji `event -> venue`
-* [ ] Walidacja i sanityzacja danych modelu
+* [x] Walidacja i sanityzacja danych modelu
 * [ ] Weryfikacja modelu danych przez WP-CLI i REST API
 
 ## Etap 4 - podstawowy interfejs
