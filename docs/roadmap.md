@@ -42,7 +42,7 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 * [x] Weryfikacja `event` przez WP-CLI
 * [x] Weryfikacja `event` w REST API
 * [x] Implementacja Custom Post Type `venue`
-* [ ] Implementacja taksonomii `event_category`
+* [x] Implementacja taksonomii `event_category`
 * [ ] Implementacja taksonomii `district`
 * [ ] Rejestracja meta fields dla `event`
 * [ ] Rejestracja meta fields dla `venue`

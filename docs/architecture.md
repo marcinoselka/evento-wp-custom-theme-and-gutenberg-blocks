@@ -115,7 +115,8 @@ theme/
 ├── package.json
 ├── package-lock.json
 ├── inc/
-│   └── post-types.php
+│   ├── post-types.php
+│   └── taxonomies.php
 ├── templates/
 │   └── index.html
 └── parts/
@@ -166,6 +167,14 @@ venue
 Typ `event` jest publiczny, widoczny w REST API z bazą `events`, posiada archiwum pod adresem `events` i obsługuje tytuł, edytor oraz Featured Image.
 
 Typ `venue` jest publiczny, widoczny w REST API z bazą `venues`, posiada archiwum pod adresem `venues` i obsługuje tytuł, edytor oraz Featured Image.
+
+Motyw rejestruje aktualnie taksonomię:
+
+```text
+event_category
+```
+
+Taksonomia `event_category` jest przypisana do typu `event`, jest hierarchiczna, publiczna i widoczna w REST API z bazą `event-categories`.
 
 ## WP-CLI
 
