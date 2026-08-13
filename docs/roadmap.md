@@ -36,11 +36,11 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 ## Etap 3 - model danych
 
 * [x] Zaprojektowanie modelu danych EVENTO
-* [ ] Przygotowanie minimalnej struktury PHP dla modelu danych
-* [ ] Implementacja Custom Post Type `event`
+* [x] Przygotowanie minimalnej struktury PHP dla modelu danych
+* [x] Implementacja Custom Post Type `event`
 * [ ] Weryfikacja `event` w WordPress Admin
-* [ ] Weryfikacja `event` przez WP-CLI
-* [ ] Weryfikacja `event` w REST API
+* [x] Weryfikacja `event` przez WP-CLI
+* [x] Weryfikacja `event` w REST API
 * [ ] Implementacja Custom Post Type `venue`
 * [ ] Implementacja taksonomii `event_category`
 * [ ] Implementacja taksonomii `district`

@@ -38,6 +38,8 @@ install:
 		--admin_password="$${WP_ADMIN_PASSWORD}" \
 		--admin_email="$${WP_ADMIN_EMAIL}" \
 		--skip-email'
+	docker compose run --rm cli wp option update permalink_structure '/%postname%/'
+	docker compose run --rm cli wp rewrite flush
 
 wpcli:
 	docker compose run --rm cli sh

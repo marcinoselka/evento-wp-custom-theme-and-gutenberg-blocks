@@ -114,6 +114,8 @@ theme/
 ├── theme.json
 ├── package.json
 ├── package-lock.json
+├── inc/
+│   └── post-types.php
 ├── templates/
 │   └── index.html
 └── parts/
@@ -153,6 +155,14 @@ npm run start
 Katalog `theme/src/` nie istnieje jeszcze, ponieważ projekt nie zawiera jeszcze realnego kodu JavaScript/CSS wymagającego zbudowania.
 
 Pierwsza pełna weryfikacja builda z rzeczywistym wejściem zostanie wykonana przy implementacji pierwszego customowego bloku Gutenberg.
+
+Motyw rejestruje aktualnie Custom Post Type:
+
+```text
+event
+```
+
+Typ `event` jest publiczny, widoczny w REST API z bazą `events`, posiada archiwum pod adresem `events` i obsługuje tytuł, edytor oraz Featured Image.
 
 ## WP-CLI
 
@@ -211,6 +221,14 @@ WP_ADMIN_EMAIL
 ```
 
 Komenda jest idempotentna. Jeżeli WordPress jest już zainstalowany, ponowne uruchomienie `make install` nie wykonuje instalacji ponownie.
+
+Komenda ustawia również strukturę permalinków:
+
+```text
+/%postname%/
+```
+
+Dzięki temu REST API jest dostępne pod czytelnymi adresami `/wp-json/...`, a własne typy treści mogą korzystać z przyjaznych adresów URL.
 
 Na tym etapie `make install` nie aktywuje jeszcze motywu.
 

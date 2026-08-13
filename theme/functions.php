@@ -9,3 +9,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+require_once get_template_directory() . '/inc/post-types.php';
+
+add_action( 'after_setup_theme', 'evento_cbt_setup' );
+
+/**
+ * Sets up theme features used by the EVENTO data model.
+ */
+function evento_cbt_setup(): void {
+	add_theme_support( 'post-thumbnails' );
+}

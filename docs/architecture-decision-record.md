@@ -295,6 +295,7 @@ powinna automatycznie:
 
 * zainstalować WordPress,
 * skonfigurować podstawowe ustawienia,
+* ustawić strukturę permalinków `/%postname%/`,
 * utworzyć administratora,
 * aktywować wymagane elementy projektu.
 
