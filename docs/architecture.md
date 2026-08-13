@@ -172,9 +172,12 @@ Motyw rejestruje aktualnie taksonomię:
 
 ```text
 event_category
+district
 ```
 
 Taksonomia `event_category` jest przypisana do typu `event`, jest hierarchiczna, publiczna i widoczna w REST API z bazą `event-categories`.
+
+Taksonomia `district` jest przypisana do typu `venue`, jest hierarchiczna, publiczna i widoczna w REST API z bazą `districts`.
 
 ## WP-CLI
 
