@@ -160,9 +160,12 @@ Motyw rejestruje aktualnie Custom Post Type:
 
 ```text
 event
+venue
 ```
 
 Typ `event` jest publiczny, widoczny w REST API z bazą `events`, posiada archiwum pod adresem `events` i obsługuje tytuł, edytor oraz Featured Image.
+
+Typ `venue` jest publiczny, widoczny w REST API z bazą `venues`, posiada archiwum pod adresem `venues` i obsługuje tytuł, edytor oraz Featured Image.
 
 ## WP-CLI
 
