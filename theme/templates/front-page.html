@@ -1,0 +1,91 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+	<!-- wp:group {"tagName":"section","className":"evento-hero","align":"wide","layout":{"type":"constrained","contentSize":"1200px"}} -->
+	<section class="wp-block-group alignwide evento-hero">
+		<!-- wp:heading {"level":1,"className":"evento-hero__title","fontSize":"xx-large"} -->
+		<h1 class="wp-block-heading evento-hero__title has-xx-large-font-size">Wydarzenia<span class="evento-accent">Warszawa</span></h1>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph {"className":"evento-hero__subtitle"} -->
+		<p class="evento-hero__subtitle">Wybierz i baw się dobrze.</p>
+		<!-- /wp:paragraph -->
+	</section>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"tagName":"section","className":"evento-section","align":"wide","layout":{"type":"constrained","contentSize":"1200px"}} -->
+	<section class="wp-block-group alignwide evento-section">
+		<!-- wp:evento/event-categories {"count":8} /-->
+	</section>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"tagName":"section","className":"evento-section evento-section--surface","align":"wide","layout":{"type":"constrained","contentSize":"1200px"}} -->
+	<section class="wp-block-group alignwide evento-section evento-section--surface">
+		<!-- wp:paragraph {"className":"evento-section__eyebrow"} -->
+		<p class="evento-section__eyebrow"><span class="evento-badge-pill" style="background-color:var(--wp--preset--color--sun-light);color:var(--wp--preset--color--sun-dark)">Mapa nasłonecznienia</span></p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:heading {"level":2,"className":"evento-section__title"} -->
+		<h2 class="wp-block-heading evento-section__title">Gdzie dziś najcieplej</h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:paragraph -->
+		<p>Im więcej wydarzeń w dzielnicy, tym cieplejszy kolor kafelka.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:spacer {"height":"1.5rem"} -->
+		<div style="height:1.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+		<!-- /wp:spacer -->
+
+		<!-- wp:evento/district-map /-->
+	</section>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"tagName":"section","className":"evento-section","align":"wide","layout":{"type":"constrained","contentSize":"1200px"}} -->
+	<section class="wp-block-group alignwide evento-section">
+		<!-- wp:paragraph {"className":"evento-section__eyebrow"} -->
+		<p class="evento-section__eyebrow"><span class="evento-badge-pill" style="background-color:var(--wp--preset--color--park-light);color:var(--wp--preset--color--park-dark)">Nadchodzące</span></p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:heading {"level":2,"className":"evento-section__title"} -->
+		<h2 class="wp-block-heading evento-section__title">Na co warto się wybrać</h2>
+		<!-- /wp:heading -->
+
+		<!-- wp:spacer {"height":"1.5rem"} -->
+		<div style="height:1.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+		<!-- /wp:spacer -->
+
+		<!-- wp:evento/upcoming-events {"count":6} /-->
+	</section>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"tagName":"section","className":"evento-cta","align":"full","layout":{"type":"constrained","contentSize":"1200px"}} -->
+	<section class="wp-block-group alignfull evento-cta">
+		<!-- wp:group {"className":"evento-cta__inner","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
+		<div class="wp-block-group evento-cta__inner">
+			<!-- wp:group -->
+			<div class="wp-block-group">
+				<!-- wp:heading {"level":2,"className":"evento-cta__title"} -->
+				<h2 class="wp-block-heading evento-cta__title">Nie przegap tego, co dzieje się w Warszawie</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"evento-cta__subtitle"} -->
+				<p class="evento-cta__subtitle">Przeglądaj pełny, zawsze aktualny kalendarz wydarzeń w stolicy.</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:html -->
+			<a class="evento-btn-primary" href="/events/">Wszystkie wydarzenia</a>
+			<!-- /wp:html -->
+		</div>
+		<!-- /wp:group -->
+	</section>
+	<!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

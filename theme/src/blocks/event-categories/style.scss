@@ -1,0 +1,31 @@
+.evento-categories-pills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+.evento-categories-pills__empty {
+	color: var(--wp--preset--color--ink-soft);
+}
+
+.evento-category-pill {
+	background: var(--wp--preset--color--stone-surface);
+	color: var(--wp--preset--color--ink);
+	border: 1px solid var(--wp--preset--color--stone-line);
+	text-decoration: none;
+	transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.evento-category-pill:hover {
+	border-color: var(--wp--preset--color--park);
+	background: var(--wp--preset--color--park-light);
+	color: var(--wp--preset--color--park-dark);
+}
+
+.evento-category-pill__count {
+	color: var(--wp--preset--color--ink-soft);
+}
+
+.evento-category-pill:hover .evento-category-pill__count {
+	color: inherit;
+}

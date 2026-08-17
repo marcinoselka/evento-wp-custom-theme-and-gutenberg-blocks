@@ -1,7 +1,71 @@
-<!-- wp:group {"tagName":"footer","layout":{"type":"constrained"}} -->
-<footer class="wp-block-group">
-	<!-- wp:paragraph -->
-	<p>EVENTO - custom WordPress Block Theme.</p>
-	<!-- /wp:paragraph -->
+<!-- wp:group {"tagName":"footer","className":"evento-footer","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<footer class="wp-block-group evento-footer">
+	<!-- wp:group {"className":"evento-footer__grid"} -->
+	<div class="wp-block-group evento-footer__grid">
+		<!-- wp:group -->
+		<div class="wp-block-group">
+			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+			<div class="wp-block-group">
+				<!-- wp:html -->
+				<span class="evento-logo-mark" aria-hidden="true"></span>
+				<!-- /wp:html -->
+
+				<!-- wp:site-title {"level":3,"className":"evento-logo"} /-->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:paragraph {"className":"evento-footer__tagline"} -->
+			<p class="evento-footer__tagline">Przegląd wydarzeń kulturalnych, sportowych i rodzinnych w Warszawie — zawsze aktualny.</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group -->
+		<div class="wp-block-group">
+			<!-- wp:paragraph {"className":"evento-footer__heading"} -->
+			<p class="evento-footer__heading">Kategorie</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:categories {"taxonomy":"event_category","showHierarchy":false,"showPostCounts":false,"showEmpty":false} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group -->
+		<div class="wp-block-group">
+			<!-- wp:paragraph {"className":"evento-footer__heading"} -->
+			<p class="evento-footer__heading">Nawigacja</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:group {"className":"evento-footer__nav"} -->
+			<div class="wp-block-group evento-footer__nav">
+				<!-- wp:list -->
+				<ul class="wp-block-list">
+					<!-- wp:list-item -->
+					<li><a href="/events/">Wszystkie wydarzenia</a></li>
+					<!-- /wp:list-item -->
+
+					<!-- wp:list-item -->
+					<li><a href="/venues/">Miejsca</a></li>
+					<!-- /wp:list-item -->
+				</ul>
+				<!-- /wp:list -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"evento-footer__bottom"} -->
+	<div class="wp-block-group evento-footer__bottom">
+		<!-- wp:paragraph -->
+		<p>© EVENTO. Portal wydarzeń w Warszawie.</p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:paragraph -->
+		<p>Zbudowane na WordPressie — custom Block Theme i custom bloki Gutenberg.</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
 </footer>
 <!-- /wp:group -->

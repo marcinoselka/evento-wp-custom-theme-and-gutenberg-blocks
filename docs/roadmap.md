@@ -52,10 +52,10 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 
 ## Etap 4 - podstawowy interfejs
 
-* [ ] Header
-* [ ] Nawigacja
-* [ ] Footer
-* [ ] Strona główna
+* [x] Header
+* [x] Nawigacja
+* [x] Footer
+* [x] Strona główna
 * [ ] Lista wydarzeń
 * [ ] Widok pojedynczego wydarzenia
 * [ ] Widok kategorii
@@ -63,11 +63,11 @@ Roadmapa przedstawia plan rozwoju oraz aktualny status projektu.
 
 ## Etap 5 - Gutenberg
 
-* [ ] Konfiguracja środowiska dla custom blocks
-* [ ] Pierwszy własny blok Gutenberg
+* [x] Konfiguracja środowiska dla custom blocks
+* [x] Pierwszy własny blok Gutenberg
 * [ ] Blok wyróżnionych wydarzeń
-* [ ] Blok nadchodzących wydarzeń
-* [ ] Blok kategorii
+* [x] Blok nadchodzących wydarzeń
+* [x] Blok kategorii
 * [ ] Blok miejsc
 * [ ] Block Patterns
 * [ ] Dopracowanie doświadczenia edytora

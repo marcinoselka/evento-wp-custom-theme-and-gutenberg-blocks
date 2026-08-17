@@ -105,7 +105,7 @@ theme/
 
 Motyw jest własnym Block Theme tworzonym od zera.
 
-Aktualnie zawiera minimalną strukturę:
+Aktualnie zawiera strukturę:
 
 ```text
 theme/
@@ -117,9 +117,15 @@ theme/
 ├── inc/
 │   ├── post-types.php
 │   ├── taxonomies.php
-│   └── meta.php
+│   ├── meta.php
+│   └── blocks.php
+├── src/
+│   └── blocks/
+│       ├── upcoming-events/
+│       └── event-categories/
 ├── templates/
-│   └── index.html
+│   ├── index.html
+│   └── front-page.html
 └── parts/
     ├── header.html
     └── footer.html
@@ -138,7 +144,14 @@ Plik `theme.json` definiuje aktualnie:
 * szerokości layoutu `contentSize` i `wideSize`,
 * obsługę fluid typography,
 * ustawienia spacingu dla paddingu, marginesów i `blockGap`,
+* dwie rodziny fontów: `sans` (Manrope, tekst) i `display` (Unbounded, nagłówki) oraz skalę rozmiarów tekstu (`small` … `xx-large`),
+* paletę kolorów opartą na trzech akcentach — `park` (zielony, główny), `sky` (niebieski), `sun` (żółty) — oraz neutralnych `stone-bg`, `stone-surface`, `stone-line`, `ink`, `ink-soft`,
+* domyślne style elementów `link`, `button` i `heading`,
 * template parts `header` i `footer` widoczne w Site Editorze jako `EVENTO Header` i `EVENTO Footer`.
+
+Fonty Manrope i Unbounded są ładowane z Google Fonts przez `wp_enqueue_style()` w `functions.php` (ta sama usługa, z której korzysta wizualny wzorzec referencyjny motywu).
+
+Plik `theme/style.css` jest jawnie kolejkowany przez `wp_enqueue_style()` w `functions.php` (blok theme nie robi tego automatycznie) i zawiera niestandardowe style layoutu strony (header, hero, sekcje, CTA, stopka) oraz współdzielone klasy komponentów (`evento-btn-primary`, `evento-btn-secondary`, `evento-badge-pill`, `evento-card-surface`, `evento-logo-mark`), które wykraczają poza to, co wyraża `theme.json`.
 
 Proces budowania assetów motywu jest skonfigurowany w:
 
@@ -154,9 +167,7 @@ npm run build
 npm run start
 ```
 
-Katalog `theme/src/` nie istnieje jeszcze, ponieważ projekt nie zawiera jeszcze realnego kodu JavaScript/CSS wymagającego zbudowania.
-
-Pierwsza pełna weryfikacja builda z rzeczywistym wejściem zostanie wykonana przy implementacji pierwszego customowego bloku Gutenberg.
+`@wordpress/scripts` automatycznie wykrywa pliki `block.json` w `theme/src/blocks/*` i buduje każdy blok do odpowiadającego katalogu w `theme/build/blocks/*` (katalog `build/` nie jest wersjonowany).
 
 Motyw rejestruje aktualnie Custom Post Type:
 
@@ -220,6 +231,38 @@ _venue_website
 Pola meta typu `venue` są rejestrowane przez `register_post_meta()`, posiadają jawne typy, są pojedynczymi wartościami i są widoczne w REST API.
 
 Pola `_venue_latitude` i `_venue_longitude` są przechowywane jako wartości liczbowe.
+
+## Customowe bloki Gutenberg
+
+Motyw rejestruje aktualnie własne, dynamiczne (server-side rendered) bloki Gutenberg:
+
+```text
+evento/upcoming-events
+evento/event-categories
+evento/district-map
+```
+
+Źródła bloków znajdują się w `theme/src/blocks/*`, są budowane przez `@wordpress/scripts` do `theme/build/blocks/*` i rejestrowane w `theme/inc/blocks.php` przez `register_block_type()` wywoływane dla każdego katalogu z plikiem `block.json` w `theme/build/blocks`.
+
+Blok `evento/upcoming-events` renderuje siatkę kart nadchodzących wydarzeń (`post_type=event`, `_event_start_datetime >= teraz`, sortowanie rosnąco po dacie), z limitem liczby wydarzeń ustawianym atrybutem `count`. Karta pokazuje zdjęcie, kategorie i cenę/„Bezpłatne” jako plakietki nad zdjęciem, czas wydarzenia oraz miejsce z dzielnicą.
+
+Blok `evento/event-categories` renderuje kategorie taksonomii `event_category` jako plakietki (pills) z liczbą przypisanych wydarzeń, linkujące do archiwów kategorii.
+
+Blok `evento/district-map` renderuje wszystkie terminy taksonomii `district` jako kafelki, których kolor tła jest interpolowany między kolorem `sky` a `sun` proporcjonalnie do liczby nadchodzących wydarzeń w miejscach (`venue`) przypisanych do danej dzielnicy — im więcej wydarzeń, tym „cieplejszy” kolor. Każdy kafelek linkuje do archiwum danej dzielnicy.
+
+Wszystkie trzy bloki renderują swoje dane po stronie serwera (`render.php`), a w edytorze Gutenberg wykorzystują `ServerSideRender` do podglądu na żywo rzeczywistych danych.
+
+## Szablony i wygląd strony głównej
+
+Strona główna korzysta z szablonu Site Editora:
+
+```text
+theme/templates/front-page.html
+```
+
+Szablon łączy natywne bloki Gutenberg (nagłówki, przyciski, grupy) z customowymi blokami `evento/upcoming-events`, `evento/event-categories` i `evento/district-map`.
+
+Nagłówek (`parts/header.html`) zawiera oznaczenie marki (`evento-logo-mark` + `site-title`), blok `navigation` z linkami do archiwów `/events/` i `/venues/` oraz przycisk CTA (ukrywany poniżej 600px, gdzie nawigacja zwija się do menu hamburgerowego). Stopka (`parts/footer.html`) to trzykolumnowa siatka (marka, kategorie przez natywny blok `core/categories` z `taxonomy: event_category`, nawigacja) zwijana do jednej kolumny poniżej 600px, celowo bez bloku `navigation` w stopce, aby uniknąć mobilnego menu typu hamburger tam, gdzie linki powinny być zawsze widoczne.
 
 ## WP-CLI
 

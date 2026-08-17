@@ -1,5 +1,31 @@
-<!-- wp:group {"tagName":"header","layout":{"type":"constrained"}} -->
-<header class="wp-block-group">
-	<!-- wp:site-title {"level":0} /-->
+<!-- wp:group {"tagName":"header","className":"evento-header","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<header class="wp-block-group evento-header">
+	<!-- wp:group {"className":"evento-header__inner","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"}} -->
+	<div class="wp-block-group evento-header__inner">
+		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<div class="wp-block-group">
+			<!-- wp:html -->
+			<span class="evento-logo-mark" aria-hidden="true"></span>
+			<!-- /wp:html -->
+
+			<!-- wp:site-title {"level":2,"className":"evento-logo"} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:navigation {"className":"evento-nav","layout":{"type":"flex","justifyContent":"right"}} -->
+		<!-- wp:navigation-link {"label":"Wydarzenia","url":"/events/"} /-->
+
+		<!-- wp:navigation-link {"label":"Miejsca","url":"/venues/"} /-->
+		<!-- /wp:navigation -->
+
+		<!-- wp:group {"className":"evento-header__cta"} -->
+		<div class="wp-block-group evento-header__cta">
+			<!-- wp:html -->
+			<a class="evento-btn-primary" href="/events/">Zobacz wydarzenia</a>
+			<!-- /wp:html -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
 </header>
 <!-- /wp:group -->

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "evento/district-map",
+	"title": "EVENTO District Map",
+	"category": "widgets",
+	"icon": "location",
+	"description": "Heat-colored grid of Warsaw districts, warmer where more upcoming events are happening.",
+	"textdomain": "evento-cbt",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false
+	},
+	"render": "file:./render.php",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

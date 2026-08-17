@@ -1,0 +1,122 @@
+.evento-events-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.evento-events-grid__empty {
+	grid-column: 1 / -1;
+	text-align: center;
+	padding: 3rem 1rem;
+	color: var(--wp--preset--color--ink-soft);
+	font-size: var(--wp--preset--font-size--large);
+}
+
+.evento-event-card {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.evento-event-card__media {
+	position: relative;
+	display: block;
+	aspect-ratio: 3 / 2;
+	background: var(--wp--preset--color--park-light);
+	overflow: hidden;
+}
+
+.evento-event-card__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.5s ease;
+}
+
+.evento-event-card:hover .evento-event-card__media img {
+	transform: scale(1.05);
+}
+
+.evento-event-card__placeholder {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, var(--wp--preset--color--park-light), var(--wp--preset--color--sky-light), var(--wp--preset--color--sun-light));
+}
+
+.evento-event-card__categories {
+	position: absolute;
+	top: 0.75rem;
+	left: 0.75rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	max-width: calc(100% - 1.5rem);
+}
+
+.evento-event-card__category {
+	background: rgba(255, 255, 255, 0.9);
+	color: var(--wp--preset--color--ink);
+	box-shadow: 0 1px 2px rgba(30, 36, 32, 0.08);
+}
+
+.evento-event-card__price {
+	position: absolute;
+	bottom: 0.75rem;
+	right: 0.75rem;
+	background: rgba(255, 255, 255, 0.95);
+	color: var(--wp--preset--color--ink);
+	box-shadow: 0 1px 2px rgba(30, 36, 32, 0.08);
+}
+
+.evento-event-card__price--free {
+	background: var(--wp--preset--color--park);
+	color: #fff;
+}
+
+.evento-event-card__body {
+	padding: 1.1rem 1.25rem 1.35rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.evento-event-card__time {
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--wp--preset--color--sky-dark);
+}
+
+.evento-event-card__title {
+	margin: 0.15rem 0 0;
+	font-size: 1.1rem;
+	line-height: 1.35;
+}
+
+.evento-event-card__title a {
+	color: var(--wp--preset--color--ink);
+	text-decoration: none;
+}
+
+.evento-event-card__title a:hover {
+	color: var(--wp--preset--color--park-dark);
+}
+
+.evento-event-card__venue {
+	margin: 0.35rem 0 0;
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.875rem;
+	color: var(--wp--preset--color--ink-soft);
+}
+
+.evento-event-card__pin {
+	width: 1rem;
+	height: 1rem;
+	flex-shrink: 0;
+	color: var(--wp--preset--color--park);
+}

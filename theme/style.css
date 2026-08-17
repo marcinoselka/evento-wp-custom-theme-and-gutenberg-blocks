@@ -6,3 +6,338 @@ Requires at least: 7.0
 Requires PHP: 8.3
 Text Domain: evento-cbt
 */
+
+:root {
+	--evento-shadow-card: 0 1px 2px rgba(30, 36, 32, 0.04), 0 8px 24px -8px rgba(30, 36, 32, 0.1);
+	--evento-shadow-card-hover: 0 4px 10px rgba(30, 36, 32, 0.06), 0 20px 40px -12px rgba(30, 36, 32, 0.18);
+	--evento-radius: 1.25rem;
+}
+
+/* Shared utilities */
+
+.evento-badge-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	border-radius: 999px;
+	padding: 0.3rem 0.75rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+.evento-btn-primary,
+.evento-btn-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 999px;
+	padding: 0.65rem 1.35rem;
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.evento-btn-primary {
+	background: var(--wp--preset--color--park);
+	color: #fff;
+}
+
+.evento-btn-primary:hover {
+	background: var(--wp--preset--color--park-dark);
+	color: #fff;
+}
+
+.evento-btn-secondary {
+	background: #fff;
+	color: var(--wp--preset--color--ink);
+	border: 1px solid var(--wp--preset--color--stone-line);
+}
+
+.evento-btn-secondary:hover {
+	border-color: var(--wp--preset--color--park);
+	color: var(--wp--preset--color--park-dark);
+}
+
+.evento-card-surface {
+	background: var(--wp--preset--color--stone-surface);
+	border: 1px solid var(--wp--preset--color--stone-line);
+	border-radius: var(--evento-radius);
+	box-shadow: var(--evento-shadow-card);
+	transition: box-shadow 0.3s ease;
+}
+
+.evento-card-surface:hover {
+	box-shadow: var(--evento-shadow-card-hover);
+}
+
+/* Logo mark */
+
+.evento-logo-mark {
+	position: relative;
+	display: inline-flex;
+	width: 2.1rem;
+	height: 2.1rem;
+	border-radius: 999px;
+	background: var(--wp--preset--color--park);
+	flex-shrink: 0;
+}
+
+.evento-logo-mark::after {
+	content: "";
+	position: absolute;
+	inset: 0.35rem;
+	border-radius: 999px;
+	background: var(--wp--preset--color--sun);
+}
+
+.evento-footer .evento-logo-mark {
+	width: 1.85rem;
+	height: 1.85rem;
+}
+
+/* Header */
+
+.evento-header {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: rgba(242, 241, 236, 0.9);
+	backdrop-filter: blur(8px);
+	border-bottom: 1px solid var(--wp--preset--color--stone-line);
+}
+
+.evento-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.evento-header .evento-logo,
+.evento-footer .evento-logo {
+	margin: 0;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 1.3rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+}
+
+.evento-header .evento-logo a,
+.evento-footer .evento-logo a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	text-decoration: none;
+	color: var(--wp--preset--color--ink);
+}
+
+.evento-nav {
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.evento-nav a {
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	color: var(--wp--preset--color--ink-soft);
+}
+
+.evento-nav a:hover {
+	background: #fff;
+	color: var(--wp--preset--color--ink);
+}
+
+.evento-header__cta {
+	flex-shrink: 0;
+}
+
+@media (max-width: 599px) {
+	.evento-header__cta {
+		display: none;
+	}
+}
+
+/* Hero / heading */
+
+.evento-hero {
+	padding-top: clamp(2.5rem, 5vw, 3.5rem);
+	padding-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.evento-hero__title {
+	margin: 0;
+	font-size: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.evento-hero__title .evento-accent {
+	color: var(--wp--preset--color--park);
+}
+
+.evento-hero__subtitle {
+	margin: 0.5rem 0 0;
+	color: var(--wp--preset--color--ink-soft);
+}
+
+/* Sections */
+
+.evento-section {
+	padding-top: clamp(2.5rem, 5vw, 3.5rem);
+	padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.evento-section--surface {
+	background: #fff;
+	border-top: 1px solid var(--wp--preset--color--stone-line);
+}
+
+.evento-section__eyebrow {
+	margin: 0 0 0.75rem;
+}
+
+.evento-section__title {
+	margin: 0;
+}
+
+/* Closing CTA */
+
+.evento-cta {
+	margin-top: 0;
+	border-top: 1px solid var(--wp--preset--color--stone-line);
+	padding: clamp(2.5rem, 6vw, 3.5rem) 2rem;
+	background: var(--wp--preset--color--park);
+	text-align: left;
+}
+
+.evento-cta__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+}
+
+.evento-cta__title {
+	margin: 0;
+	color: #fff;
+	font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.evento-cta__subtitle {
+	margin: 0.5rem 0 0;
+	max-width: 34rem;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.evento-cta .evento-btn-primary {
+	background: var(--wp--preset--color--sun);
+	color: var(--wp--preset--color--ink);
+	flex-shrink: 0;
+}
+
+.evento-cta .evento-btn-primary:hover {
+	background: var(--wp--preset--color--sun-dark);
+	color: var(--wp--preset--color--ink);
+}
+
+/* Footer */
+
+.evento-footer {
+	padding-top: 3rem;
+	padding-bottom: 2rem;
+	background: #fff;
+	border-top: 1px solid var(--wp--preset--color--stone-line);
+}
+
+.evento-footer__grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr;
+	gap: 2.5rem;
+}
+
+@media (max-width: 599px) {
+	.evento-footer__grid {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+}
+
+.evento-footer__tagline {
+	margin: 0.75rem 0 0;
+	max-width: 20rem;
+	color: var(--wp--preset--color--ink-soft);
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+.evento-footer__heading {
+	margin: 0;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--wp--preset--color--ink);
+}
+
+.evento-footer__nav {
+	font-size: 0.9rem;
+}
+
+.evento-footer__nav ul {
+	margin: 1rem 0 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.evento-footer__nav a,
+.evento-footer .wp-block-categories a {
+	text-decoration: none;
+	color: var(--wp--preset--color--ink-soft);
+}
+
+.evento-footer__nav a:hover,
+.evento-footer .wp-block-categories a:hover {
+	color: var(--wp--preset--color--park-dark);
+}
+
+.evento-footer .wp-block-categories {
+	margin: 1rem 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0.9rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.evento-footer__about {
+	margin: 1rem 0 0;
+	color: var(--wp--preset--color--ink-soft);
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+.evento-footer__bottom {
+	margin-top: 2.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--wp--preset--color--stone-line);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	color: var(--wp--preset--color--ink-soft);
+	font-size: 0.8rem;
+}
+
+.evento-footer__bottom p {
+	margin: 0;
+}
